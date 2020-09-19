@@ -4,18 +4,26 @@ new Vue({
     // which is included at the bottom of the html file.
     el: "#app",
     data: {
-        name: "",
-        greeting: ""
+        number1: "",
+        number2: "",
+        operation: "",
+        result: ""
     },
     methods: {
-        sayHello() {
-            console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
-            }
-            else {
-                this.greeting = "Hello " + this.name
-            }
+    calculate() {
+        if(this.operation== "+") {
+            this.result=this.number1 + this.number2
         }
+        else if(this.operation == "-"){
+            this.result=this.number1 - this.number2
+        }
+        else if(this.operation == "*"){
+            this.result=this.number1 * this.number2
+        }
+        else if(this.operation == "/"){
+            this.result=this.number / this.number2
+        }
+        console.log(this.result.toString())
     }
+}
 })
